@@ -1,13 +1,14 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { Contact } from './contact/contact';
 import { Projects } from './projects/projects';
 import { Gallery } from './gallery/gallery';
 import { Resumes } from './resumes/resumes';
+import { Emailcontact } from './emailcontact/emailcontact';
+import { Aboutme } from './aboutme/aboutme';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Contact, Projects, Gallery, Resumes],
+  imports: [Contact, Projects, Gallery, Resumes, Emailcontact, Aboutme],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

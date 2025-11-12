@@ -1,0 +1,97 @@
+.about-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1.3px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radius);
+    width: 720px;
+    min-height: 180px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(.2, .8, .3, 1), background 0.3s;
+    cursor: default;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(58, 237, 130, 0.15);
+}
+
+/* Parte superior (foto + nombre) */
+.about-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-top img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+}
+
+.about-top strong {
+    font-size: 1.1rem;
+    color: #fff;
+    display: block;
+}
+
+.about-top p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+/* Texto */
+.about-text {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 12px;
+}
+
+/* Animación sutil de entrada */
+.fade-in-div {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInDiv 0.6s ease forwards;
+}
+
+@keyframes fadeInDiv {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .about-card {
+        width: 260px;
+        padding: 16px;
+    }
+
+    .about-top img {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+.name-title {
+    font-family: "Bodoni Moda SC", serif;
+    font-size: 3.8rem;
+    letter-spacing: 1px;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 12px;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
