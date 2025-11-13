@@ -5,10 +5,11 @@ import { Gallery } from './gallery/gallery';
 import { Resumes } from './resumes/resumes';
 import { Emailcontact } from './emailcontact/emailcontact';
 import { Aboutme } from './aboutme/aboutme';
+import { Preloader } from './preloader/preloader';
 
 @Component({
   selector: 'app-root',
-  imports: [Contact, Projects, Gallery, Resumes, Emailcontact, Aboutme],
+  imports: [Contact, Projects, Gallery, Resumes, Emailcontact, Aboutme, Preloader],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

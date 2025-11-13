@@ -1,0 +1,105 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(800px at 30% 20%, rgba(0, 0, 0, 0.25), transparent),
+              radial-gradient(600px at 80% 80%, rgba(0, 0, 0, 0.2), transparent),
+              #0b0c10;
+  color: #3aed82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  font-family: "Courier New", monospace;
+  text-shadow: 0 0 10px #3aed82;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.terminal p {
+  opacity: 0;
+  transform: translateY(5px);
+  animation: typeLine 0.4s ease forwards;
+}
+
+@keyframes typeLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ Luz que simula desbloqueo */
+.unlock-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: #3aed82;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+}
+
+/* 🎬 Secuencia de desbloqueo */
+.unlock-sequence {
+  animation: unlockSequence 2s ease forwards;
+}
+
+@keyframes unlockSequence {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    filter: brightness(1);
+    transform: scale(1.02);
+  }
+  40% {
+    filter: brightness(3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* ✨ animación para la luz central */
+.unlock-sequence .unlock-glow {
+  animation: glowExpand 1.2s ease-out forwards;
+}
+
+@keyframes glowExpand {
+  0% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0);
+    box-shadow: 0 0 10px 5px #3aed82;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(20);
+    box-shadow: 0 0 100px 80px rgba(58, 237, 130, 0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(60);
+    box-shadow: none;
+  }
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .terminal {
+    font-size: 0.85rem;
+    padding: 20px;
+    text-align: center;
+  }
+}

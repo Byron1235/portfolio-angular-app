@@ -1,0 +1,8 @@
+<div class="preloader" *ngIf="showPreloader">
+  <div class="terminal">
+    <p *ngFor="let line of lines; let i = index" [style.animationDelay]="i * 0.4 + 's'">
+      {{ line }}
+    </p>
+  </div>
+  <div class="unlock-glow"></div>
+</div>
