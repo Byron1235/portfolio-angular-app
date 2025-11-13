@@ -18,7 +18,7 @@ export class Preloader implements OnInit {
     "Linking subsystems...",
     "Synchronizing I/O channels...",
     "Quantum link stable.",
-    "Access granted. Welcome, Byron."
+    "Access granted. Welcome."
   ];
 
   ngOnInit() {
