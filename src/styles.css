@@ -159,6 +159,7 @@
       letter-spacing: 0.5px;
       color: #f1f1f1;
       user-select: none;
+      text-align: center;
     }
 
     /* Nombre abajo a la izquierda */
@@ -289,54 +290,58 @@
   margin-bottom: 40px;
 }
 
-.carousel-container {
-  position: relative;
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.08);
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s ease, transform .8s ease;
 }
 
-.carousel-track {
-  display: flex;
-  transition: transform .4s ease-in-out;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-.carousel-item {
-  width: 100%;
-  flex-shrink: 0;
-  border-radius: 12px;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.07);
-  color: white;
-  border: none;
-  padding: 8px 14px;
+.to-page-top {
+  width: 180px;
+  display: block;
+  margin: 60px auto 40px;
+  position: relative;      /* → CONTENEDOR DEL SPRITE */
   cursor: pointer;
-  border-radius: 12px;
-  font-size: 20px;
-  user-select: none;
-  backdrop-filter: blur(6px);
+  transition: opacity .3s ease;
 }
 
-.carousel-btn:hover {
-  background: rgba(255,255,255,0.25);
+.to-page-top img {
+  display: block;
+  width: 100%;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* mobile */
-@media (max-width: 768px) {
-  .carousel-btn {
-    font-size: 16px;
-    padding: 6px 10px;
-  }
+/* Fondo del botón (imagen base) */
+.page-top-bg {
+  width: 100%;
+  display: block;
 }
+
+/* Sprite animado ENCIMA del botón */
+.page-top-sprite {
+  position: absolute;
+  top: 50%;                 /* Centrado */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado real */
+  width: 110%;              /* tamaño controlado */
+  height: auto;
+  pointer-events: none;
+  animation: galica 3s ease-in-out infinite;
+}
+
+/* El sprite debe adaptarse */
+.page-top-sprite img {
+  width: 100%;
+  height: auto;
+}
+
+/* Animación floating */
+@keyframes galica {
+  0% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, -56%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
