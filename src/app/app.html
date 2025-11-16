@@ -1,35 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel+Decorative:wght@400;700;900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Particles -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-</head>
-    <app-preloader></app-preloader>
+  </head>
 
-    <div id="particles-js"></div>
+  <app-preloader></app-preloader>
+  <div id="particles-js"></div>
+
+  <section id="about">
     <app-aboutme></app-aboutme>
-    <app-projects></app-projects>
-    <app-gallery></app-gallery>
-    <app-contact></app-contact>   
-    <app-emailcontact></app-emailcontact>
-    <app-resumes></app-resumes>
-    <footer>
-        <p class="copyright">©Nasuka Copyright 2025</p>
-    </footer>
+  </section>
 
+  <section id="projects">
+    <app-projects></app-projects>
+  </section>
+
+  <section id="gallery">
+    <app-gallery></app-gallery>
+  </section>
+
+  <section id="contact">
+    <app-emailcontact></app-emailcontact>
+  </section>
+
+  <section id="resume">
+    <app-resumes></app-resumes>
+  </section>
+  <section>
+    <a class="to-page-top" id="toPageTopBtn" title="PAGE TOP">
+        <span class="page-top-sprite">
+            <img src="assets/Images/button_pagetop_anime_sprite.webp" alt="">
+        </span>
+        <img src="assets/Images/button_pagetop_bg.png" alt="PAGE TOP">
+    </a>
+  </section>
+  <footer>
+    <p class="copyright">© Nasuka Copyright 2025</p>
+  </footer>
 </html>
