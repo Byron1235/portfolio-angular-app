@@ -1,20 +1,28 @@
 export default async function handler(req, res) {
-    const city = req.query.city;
-
-    // Tu API key segura en variable de entorno
-    const key = process.env.WEATHER_KEY;
-
-    if (!key) {
-        return res.status(500).json({ error: "API key missing in server." });
-    }
-
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=es`;
-
     try {
+        const city = req.query.city;
+        const key = process.env.WEATHER_KEY;
+
+        if (!key) {
+            return res.status(500).json({ error: "Missing API key." });
+        }
+
+        const url =
+            `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${key}&units=metric&lang=es`;
+
         const response = await fetch(url);
+
+        if (!response.ok) {
+            return res.status(response.status).json({
+                error: "Weather API error",
+                status: response.status
+            });
+        }
+
         const data = await response.json();
-        res.status(200).json(data);
+
+        return res.status(200).json(data);
     } catch (err) {
-        res.status(500).json({ error: "Weather API failed." });
+        return res.status(500).json({ error: "Internal server error" });
     }
 }
