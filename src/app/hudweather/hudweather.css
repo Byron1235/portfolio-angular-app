@@ -1,0 +1,56 @@
+/* --- MODO ESCRITORIO --- */
+.hud {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  z-index: 10000;
+  font-family: "Bodoni Moda SC", serif;
+  animation: hud-fade 1s ease forwards;
+}
+
+/* Animación */
+@keyframes hud-fade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cada fila */
+.hud-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.hud-label {
+  color: var(--muted);
+  font-family: "Bodoni Moda SC", serif;
+  font-weight: 600;
+}
+
+/* --- MODO CELULAR / TABLET --- */
+@media (max-width: 768px) {
+  .hud {
+    position: relative;        
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255,255,255,0.05);  
+    border-radius: 12px;
+    padding: 12px 16px;
+    z-index: 1;                
+  }
+}
