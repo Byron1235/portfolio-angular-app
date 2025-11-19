@@ -5,10 +5,11 @@ import { Resumes } from './resumes/resumes';
 import { Emailcontact } from './emailcontact/emailcontact';
 import { Aboutme } from './aboutme/aboutme';
 import { Preloader } from './preloader/preloader';
+import { Hud } from './hudweather/hudweather';
 
 @Component({
   selector: 'app-root',
-  imports: [Projects, Gallery, Resumes, Emailcontact, Aboutme, Preloader],
+  imports: [Projects, Gallery, Resumes, Emailcontact, Aboutme, Preloader, Hud],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

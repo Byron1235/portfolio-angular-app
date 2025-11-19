@@ -1,0 +1,11 @@
+<div class="hud" id="hud">
+    <div class="hud-row">
+        <span class="hud-label">Date:</span>
+        <span>{{ date | date : 'short' }}</span>
+    </div>
+
+    <div class="hud-row" *ngIf="weather">
+        <span class="hud-label">Weather:</span>
+        <span>{{ weather.main.temp }}°C · {{ weather.weather[0].description }}</span>
+    </div>
+</div>
