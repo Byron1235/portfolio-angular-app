@@ -17,7 +17,7 @@ export class Hud implements OnInit {
   constructor(private weatherService: Weather) {}
 
   ngOnInit() {
-    this.weatherService.getWeather('Parral')
+    this.weatherService.getWeather('Parral', 'CL')
       .subscribe(data => this.weather = data);
 
     setInterval(() => this.date = new Date(), 1000);

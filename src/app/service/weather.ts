@@ -8,8 +8,8 @@ export class Weather {
 
   constructor(private http: HttpClient) {}
 
-  getWeather(city: string) {
-    return this.http.get(`${this.apiUrl}?city=${city}`);
+  getWeather(city: string, country: string) {
+    return this.http.get(`${this.apiUrl}?city=${city},${country}`);
   }
 }
 
