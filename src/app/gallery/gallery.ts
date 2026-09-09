@@ -20,10 +20,6 @@ export class Gallery implements OnInit {
     'assets/Images/nfurgon3.PNG',
     'assets/Images/nfurgon4.PNG',
     'assets/Images/nfurgon5.PNG',
-    'assets/Images/Explosur.PNG',
-    'assets/Images/Explosur2.PNG',
-    'assets/Images/Explosur3.PNG',
-    'assets/Images/Explosur4.PNG',
   ];
 
   index = 0;

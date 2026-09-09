@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Hudweather } from './hudweather';
+import { Hud } from './hudweather';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Hudweather', () => {
-  let component: Hudweather;
-  let fixture: ComponentFixture<Hudweather>;
+  let component: Hud;
+  let fixture: ComponentFixture<Hud>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Hudweather]
+      imports: [Hud, HttpClientTestingModule]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Hudweather);
+    fixture = TestBed.createComponent(Hud);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
